@@ -22,7 +22,7 @@ function performConversion() {
   const from = parseInt(fromBase.value);
   const to = parseInt(toBase.value);
   if (!validate(value, from)) {
-    alert('Invalid input for base ' + from);
+    alert('Number to daal bhai! ' + from);
     return;
   }
   const decimal = parseInt(value, from);
