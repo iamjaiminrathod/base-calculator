@@ -22,7 +22,7 @@ function performConversion() {
   const from = parseInt(fromBase.value);
   const to = parseInt(toBase.value);
   if (!validate(value, from)) {
-    alert('😏 Number to daal bhai! ' + from);
+    alert('😏 Number to daal bhai!');
     return;
   }
   const decimal = parseInt(value, from);
@@ -47,8 +47,20 @@ copyResultBtn.addEventListener('click', () => {
 });
 
 // ✅ Disable right click with funny message
+// Disable right click with random funny messages
 window.addEventListener("contextmenu", function(e) {
   e.preventDefault();
-  alert("😎 Hacker banna hai kya? Right click se nahi hoga!");
+  
+  const funnyMessages = [
+    "😎 Hacker banna hai kya? Right click se nahi hoga!",
+    "😂 Oye! Right click mat kar, calculator jealous ho jayega!",
+    "🚫 Right click band hai... left click hi zindagi hai!",
+    "😜 Right click se coding nahi aati boss!",
+    "🤓 Padhai karo, right click karne se number nahi milenge!",
+    "🙅‍♂️ Right click allowed nahi... abhi nahi, kabhi nahi!"
+  ];
+  
+  const randomMsg = funnyMessages[Math.floor(Math.random() * funnyMessages.length)];
+  alert(randomMsg);
   return false;
 });
