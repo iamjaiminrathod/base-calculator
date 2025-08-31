@@ -46,8 +46,9 @@ copyResultBtn.addEventListener('click', () => {
   alert('Answer copied!');
 });
 
-// Disable right click with funny message
-document.addEventListener("contextmenu", function(e) {
+// ✅ Disable right click with funny message
+window.addEventListener("contextmenu", function(e) {
   e.preventDefault();
   alert("😎 Hacker banna hai kya? Right click se nahi hoga!");
+  return false;
 });
