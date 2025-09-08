@@ -17,20 +17,16 @@ const patterns = {
 function parseInput(raw) {
   raw = raw.trim();
   let match = raw.match(/^\((.+)\)(2|8|10|16)$/);
-  if (match) {
-    return { value: match[1], base: parseInt(match[2]) };
-  }
+  if (match) return { value: match[1], base: parseInt(match[2]) };
+
   match = raw.match(/^(.+)\((2|8|10|16)\)$/);
-  if (match) {
-    return { value: match[1], base: parseInt(match[2]) };
-  }
+  if (match) return { value: match[1], base: parseInt(match[2]) };
+
   return { value: raw, base: parseInt(fromBase.value) };
 }
 
 function toDecimal(value, base) {
-  if (!patterns[base].test(value)) {
-    throw new Error("Invalid number for base " + base);
-  }
+  if (!patterns[base].test(value)) throw new Error("Invalid number for base " + base);
   const parts = value.split(".");
   const intPart = parts[0];
   const fracPart = parts[1] || "";
@@ -71,9 +67,17 @@ function performConversion() {
     const value = parsed.value;
     const decimal = toDecimal(value, from);
     const converted = fromDecimal(decimal, to);
+
     const answer = `${value} (${from}) = ${converted} (${to})`;
+
+    // Show result in answer box
     resultDiv.textContent = answer;
     resultBox.classList.remove('hidden');
+
+    // Scroll/focus for better UX
+    resultBox.scrollIntoView({ behavior: 'smooth' });
+    resultBox.focus();
+
   } catch (err) {
     alert("⚠️ " + err.message);
   }
@@ -81,17 +85,20 @@ function performConversion() {
 
 convertBtn.addEventListener('click', performConversion);
 input.addEventListener('keypress', e => { if (e.key === 'Enter') performConversion(); });
+
 resetBtn.addEventListener('click', () => {
   input.value = '';
   resultBox.classList.add('hidden');
 });
+
 copyResultBtn.addEventListener('click', () => {
   navigator.clipboard.writeText(resultDiv.textContent);
   alert('Answer copied!');
 });
+
 window.addEventListener("contextmenu", function(e) {
   e.preventDefault();
-  const funnyMessages =  [
+  const funnyMessages = [
     "🤣 Oye hacker ji, coding ka shortcut nahi milne wala!",
     "😜 Right click kar ke duniya nahi badlegi bhai!",
     "😂 Itna bhi kya pyaar hai source code se?",
