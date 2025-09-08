@@ -91,14 +91,34 @@ copyResultBtn.addEventListener('click', () => {
 });
 window.addEventListener("contextmenu", function(e) {
   e.preventDefault();
-  const funnyMessages = [
-    "😎 Hacker banna hai kya? Right click se nahi hoga!",
-    "😂 Oye! Right click mat kar, calculator jealous ho jayega!",
-    "🚫 Right click band hai... left click hi zindagi hai!",
-    "😜 Right click se coding nahi aati boss!",
-    "🤓 Padhai karo, right click karne se number nahi milenge!",
-    "🙅‍♂️ Right click allowed nahi... abhi nahi, kabhi nahi!"
+  const funnyMessages =  [
+    "🤣 Oye hacker ji, coding ka shortcut nahi milne wala!",
+    "😜 Right click kar ke duniya nahi badlegi bhai!",
+    "😂 Itna bhi kya pyaar hai source code se?",
+    "🙃 Arre baba, yeh button sirf tension deta hai!",
+    "😎 Chill maar... code Google pe bhi nahi milega!",
+    "😏 Abey, keyboard use kar... mouse thak gaya hai!",
+    "🔥 Hacker banna hai? Lekin free WiFi pe baith ke?",
+    "🤣 Yeh code tujhe samajh aaya toh humko bhi bata dena!",
+    "😅 Beta, coding karni hai ya shadi.com join karna hai?",
+    "🤯 System bol raha hai: 'Abe ruk jaa, dimaag kharab ho gaya!'",
+    "😂 Oye hoye! Code dekhna mana hai!",
+    "😎 Chill bhai, yeh secret hai!",
+    "🤨 Itna bhi kya pyaar hai mere code se?",
+    "🕵️ Arre detective babu, kuch nahi milega!",
+    "⚠️ Beta, coding ki duniya dangerous hai!",
+    "😂 Oye! Right click se coding nahi sikhi jaati!",
+    "😎 Arre bhai, code chahiye toh khud likhna seekh!",
+    "🤨 Itna pyaar mere code se? Shaadi karega kya?",
+    "🕵️ Detective mode band kar... yahan kuch secret nahi!",
+    "⚠️ Warning: Yeh button daba ke kuch nahi milega!",
+    "🤣 Hacker banna hai? Pahle padhai karle beta!",
+    "🤖 Are yaar, code chaiye to is number par message kar! +916355938009",
+    "😜 Mazak tha... code idhar nahi milega!",
+    "🙈 Right click kar ke kya hi milega? Chai pi le ja..!",
+    "🔥 Error 101: Teri curiosity zyada hai!"
   ];
+
   const randomMsg = funnyMessages[Math.floor(Math.random() * funnyMessages.length)];
   alert(randomMsg);
   return false;
