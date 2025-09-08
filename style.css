@@ -144,4 +144,7 @@ body {
     width: 100%;
     border-radius: 12px;
   }
+  #footer {
+  font-size: 10px;
+}
 }
